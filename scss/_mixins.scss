@@ -1,0 +1,35 @@
+@mixin flex ($direction, $justify, $align-items, $gap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align-items;
+    gap: $gap;
+}
+
+@mixin Montserrat-font ($weight, $size) {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: $weight;
+    font-style: normal;
+    font-size: $size;
+}
+
+@mixin OpenSans-font ($style, $weight, $size) {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $size;
+}
+
+@mixin responsive-font-size($min-size, $max-size) {
+    font-size: $min-size;
+
+    @media (min-width: 576px) {
+        font-size: calc(#{$min-size} + (#{$max-size} - #{$min-size}) * ((100vw - 576px) / (1200 - 576)));
+    }
+
+    @media (min-width: 1200px) {
+        font-size: $max-size;
+    }
+}

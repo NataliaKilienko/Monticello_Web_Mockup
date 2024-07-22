@@ -1,0 +1,100 @@
+.sl-content__title {
+    @include Montserrat-font(700, 5rem);
+    color: $main-text-color;
+
+    @include responsive-font-size(2.5rem, 5rem);
+}
+
+.sl-content__subtitle {
+    @include Montserrat-font(400, 1.125rem);
+    color: $main-text-color;
+
+    @include responsive-font-size(1rem, 1.125rem);
+}
+
+.title {
+    @include Montserrat-font(700, 2.75rem);
+    color: $main-text-color2;
+
+    @include responsive-font-size(2rem, 2.75rem);
+}
+
+.upper-title {
+    @include Montserrat-font(400, 1.375rem);
+    color: $main-text-color2;
+
+    @include responsive-font-size(1rem, 1.375rem);
+}
+
+.article-title {
+    @include Montserrat-font(700, 2.75rem);
+    color: $main-text-color2;
+
+    @include responsive-font-size(2rem, 2.75rem);
+}
+
+.text {
+    @include OpenSans-font(normal, 400, 1.125rem);
+    color: $main-text-color2;
+
+    @include responsive-font-size(1rem, 1.125rem);
+}
+
+.location {
+    @include OpenSans-font(italic, 400, 0.9375rem);
+    color: $main-text-color3;
+
+    @include responsive-font-size(0.875rem, 0.9375rem);
+}
+
+.news__title {
+    color: $main-text-color;
+}
+
+.slide__title {
+    @include Montserrat-font(700, 1.375rem);
+    color: $main-text-color2;
+
+    @include responsive-font-size(1rem, 1.375rem);
+}
+
+.slide__subtitle {
+    @include OpenSans-font(normal, 400, 1.125rem);
+
+    @include responsive-font-size(1rem, 1.125rem);
+}
+
+.user-name {
+    @include Montserrat-font(400, 1.125rem);
+    color: $main-text-color2;
+
+    @include responsive-font-size(1rem, 1.125rem);
+}
+
+.user-data {
+    @include Montserrat-font(400, 0.875rem);
+    color: $main-text-color4;
+
+    @include responsive-font-size(0.75rem, 0.875rem);
+}
+
+.contact-item {
+    @include OpenSans-font(normal, 400, 1.125rem);
+    color: $main-text-color3;
+
+    @include responsive-font-size(1rem, 1.125rem);
+}
+
+.input-name,
+.input-email {
+    @include Montserrat-font(400, 1.125rem);
+    color: #4B5562;
+
+    @include responsive-font-size(1rem, 1.125rem);
+}
+
+.copyrights {
+    @include Montserrat-font(400, 0.875rem);
+
+    @include responsive-font-size(0.75rem, 0.875rem);
+}

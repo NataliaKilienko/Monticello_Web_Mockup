@@ -1,0 +1,155 @@
+.header__slider {
+  text-align: center;
+  margin-top: 180px;
+
+  .slick-list {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-dots {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    flex-direction: column;
+
+    li.slick-active {
+      button {
+        background-color: $main-text-color;
+      }
+    }
+
+    button {
+      font-size: 0;
+      background: #39575100;
+      border: 2px solid $main-text-color;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      padding: 0;
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 100px;
+
+    .slick-dots {
+      top: 90%;
+      right: 50%;
+      transform: translateX(50%);
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+}
+
+.news__slider {
+  @include flex (row, space-around, center, 0);
+  position: relative;
+
+  .slide {
+    height: 514px;
+    max-width: 370px;
+    background-color: $main-text-color;
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+    padding: 20px 10px;
+
+    &__img img {
+      border-radius: 50%;
+    }
+  }
+
+  .slick-list {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slick-track {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .slick-dots {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    position: absolute;
+    flex-direction: row;
+    bottom: -12%;
+
+    li.slick-active {
+      button {
+        background-color: $main-text-color;
+      }
+    }
+
+    button {
+      font-size: 0;
+      background: #39575100;
+      border: 2px solid $main-text-color;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      padding: 0;
+      cursor: pointer;
+    }
+  }
+
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    font-size: 0;
+    border: 1px solid $main-text-color;
+    background: #ffddff00;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &::before {
+      content: "\003C";
+      position: absolute;
+      top: 46%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 16px;
+      color: #fff;
+    }
+  }
+
+  .slick-next {
+    right: -5px;
+
+    &::before {
+      content: "\003E";
+    }
+
+  }
+
+  .slick-prev {
+    left: -5px;
+  }
+}

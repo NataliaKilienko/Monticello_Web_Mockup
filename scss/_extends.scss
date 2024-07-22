@@ -1,0 +1,93 @@
+.menu-item {
+    font-family: "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    @include responsive-font-size(12px, 14px);
+    position: relative;
+    cursor: pointer;
+
+    &__link {
+        color: $main-text-color;
+        @include responsive-font-size(12px, 14px); 
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 9px;
+        height: 9px;
+        border: 2px solid $main-text-color;
+        border-radius: 50%;
+        transition: background-color 0.3s ease;
+    }
+
+    &:hover::before {
+        background-color: #fff;
+    }
+
+    @media (max-width: 768px) {
+        &::before {
+            left: -15px;
+            width: 7px;
+            height: 7px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        &::before {
+            left: -10px;
+            width: 5px;
+            height: 5px;
+        }
+    }
+}
+
+
+.btn,
+.submit {
+    width: 190px;
+    height: 50px;
+    padding: 10px 20px;
+    border: 1px solid $main-text-color3;
+    background-color: $main-text-color;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: $main-text-color2;
+        color: white;
+    }
+}
+
+.submit {
+    width: 140px;
+    height: 50px;
+}
+
+.btn-position {
+    position: relative;
+
+    .btn-swipe {
+        position: absolute;
+        top: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid $main-text-color;
+        background-color: rgba(250, 235, 215, 0);
+        background-image: url(../assets/images/arrow_btn.png);
+        background-position: center center;
+        cursor: pointer;
+        transition: transform 0.3s;
+
+        &:hover {
+            background-color: $btn-color;
+        }
+    }
+}
