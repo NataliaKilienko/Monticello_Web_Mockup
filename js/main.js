@@ -1,15 +1,12 @@
 $(document).ready(function () {
-    // Плавний скролл
     $('.btn-swipe').click(() => $('html, body').animate({ scrollTop: $('#about-us').offset().top }, 100));
 
-    // Додавання тексту при натисканні на кнопку
     $('.btn').on('click', function () {
         const additionalText = $(this).closest('.article').find('.additional-text');
         additionalText.slideToggle();
         $(this).text((i, text) => text === "MORE DETAILS" ? "LESS DETAILS" : "MORE DETAILS");
     });
 
-    // Використання Intersection Observer для анімації при появі в полі зору
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -19,40 +16,36 @@ $(document).ready(function () {
                         next();
                     });
                 });
-                observer.unobserve(entry.target); // Прибираємо спостерігач після анімації
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.5 }); // Відсоток видимості, при якому спрацьовує анімація
+    }, { threshold: 0.5 });
 
     observer.observe(document.querySelector('#about-us'));
 
-    // Ініціалізація Fancybox
     $('[data-fancybox="gallery"]').fancybox({
         buttons: ["close"],
         loop: true,
         protect: true
     });
 
-    // Додавання нового блоку фото та змінння тексту на кнопці
     $('#see-more-btn').on('click', () => {
         $('#more-photos').slideToggle(() => {
             $('#see-more-btn').text($('#more-photos').is(':visible') ? 'SEE LESS' : 'SEE MORE');
         });
     });
 
-    // Відкривання та закривання бургер меню
-    $('#burger-menu').click(function () {
+    $('#burger-menu').click(() => {
         $('#menu-list').toggleClass('active');
     });
 
-    $('.menu-item__link').click(function () {
+    $('.menu-item__link').click(() => {
         $('#menu-list').removeClass('active');
     });
 });
 
-// Iніціалізація GoogleMaps
-let map;
 
+let map;
 async function initMap() {
     const { Map } = await google.maps.importLibrary("maps");
 
